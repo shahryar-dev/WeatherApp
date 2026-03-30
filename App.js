@@ -13,11 +13,11 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Animation Values
+  
   const float1 = useRef(new Animated.Value(0)).current;
   const float2 = useRef(new Animated.Value(0)).current;
 
-  // Background Animation Loop
+  
   useEffect(() => {
     const startAnimations = () => {
       Animated.loop(
@@ -37,13 +37,13 @@ export default function App() {
     startAnimations();
   }, [float1, float2]);
 
-  // Interpolate animation values into X and Y movements
+  
   const translateY1 = float1.interpolate({ inputRange: [0, 1], outputRange: [0, -80] });
   const translateX1 = float1.interpolate({ inputRange: [0, 1], outputRange: [0, 50] });
   const translateY2 = float2.interpolate({ inputRange: [0, 1], outputRange: [0, 100] });
   const translateX2 = float2.interpolate({ inputRange: [0, 1], outputRange: [0, -60] });
 
-  // Initial Load & Location Fetching
+  
   useEffect(() => {
     const getInitialWeather = async () => {
       setLoading(true);
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     width: 350,
     height: 350,
     borderRadius: 175,
-    backgroundColor: 'rgba(59, 130, 246, 0.15)', // Soft Blue
+    backgroundColor: 'rgba(59, 130, 246, 0.15)', 
   },
   orb2: {
     position: 'absolute',
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     width: 400,
     height: 400,
     borderRadius: 200,
-    backgroundColor: 'rgba(139, 92, 246, 0.15)', // Soft Purple
+    backgroundColor: 'rgba(139, 92, 246, 0.15)', 
   },
   searchContainer: {
     flexDirection: 'row',
